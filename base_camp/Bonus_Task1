@@ -1,0 +1,7 @@
+SELECT T.TenantName FROM Tenants T, AptTenants Apt, Apartments A
+WHERE T.TenantID  = Apt.TenantID AND Apt.AptID = A.AptID AND A.UnitNumber > 1;
+
+
+
+SELECT B.BuildingName,R.Status FROM Building B, Apartments A, Requests R
+WHERE B.BuildingID = A.BuildingID AND A.AptID = R.AptID AND R.Status = "open";
